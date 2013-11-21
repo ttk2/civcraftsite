@@ -1,0 +1,154 @@
+//Customize the navbar
+.navbar-wrapper
+  position relative
+  z-index 15
+
+.civbox span
+  display block
+  position absolute
+  top 25px
+  left 0
+  bottom 0
+  right 0
+  z-index 5
+  background url(../img/logo.png) no-repeat center top
+  background-size auto 100px
+
+//customize the carousel
+
+.carousel
+  margin-bottom 60px
+  //negative margin to pull it up ~height of navbar/margins
+  margin-top -90px
+
+.carousel-caption
+  z-index 10
+
+.carousel .item
+  height 200px
+  width 100%
+  background-color #777
+
+.carousel-inner > .item > img
+  position absolute
+  top 0
+  left 0
+  min-width 100%
+  max-width none
+  max-height none
+  height auto
+  //height 200px
+
+.carousel .item
+  transition opacity 1s
+  //did I ever mention that I hate vendor prefixes?
+  -webkit-transition opacity 1s
+  -moz-transition opacity 1s
+  -o-transition opacity 1s
+  -khtml-transition opacity 1s
+  //yes I did just support konqueror, if khtml can do that.
+.carousel .active.left, .carousel .active.right
+  left 0
+  opacity 0
+  z-index 2
+
+.carousel .next, .carousel .prev
+  left 0
+  opacity 1
+  z-index 1
+
+//logo overlay
+
+.carousel
+  min-height 200px
+
+.carousel .layer
+  position absolute
+
+.carousel .civlogo
+  z-index 1
+  top: 20%
+  left: 50%
+  height auto
+  width 200px
+  margin-left: -100px
+
+@media (min-width: 768px)
+  .carousel .layer
+    position absolute
+  
+  .carousel .civlogo
+    z-index 1000
+    left 50%
+    margin-left -175px
+    height 150px
+    width auto
+
+  .civbox span
+    top 50px
+    background-size auto 150px
+
+  .navbar, .navbar-inverse, .navbar-static-top
+    background-color rgba(0,0,0,0.5)
+
+@media (min-width: 992px)
+  .carousel
+    min-height 500px
+
+  .carousel .layer
+    position absolute
+  
+  .carousel .item
+    height 500px
+    width 100%
+    background color #777
+
+  .carousel-inner > .item > img
+    position absolute
+    top 0
+    left 0
+    min-width 100%
+    height 500px
+
+  .civlogo
+    position fixed
+    z-index 5
+    margin 0 auto
+    left 50%
+    margin-left -300px !important
+    top 5%
+    height 261px
+    width auto
+
+  .carousel .civlogo
+    z-index 1000
+    height auto
+    width auto
+    transition opacity ease-in 1s
+    //did I ever mention that I hate vendor prefixes?
+    -webkit-transition opacity ease-in 1s
+    -moz-transition opacity ease-in 1s
+    -o-transition opacity ease-in 1s
+    -khtml-transition opacity ease-in 1s
+    //yes I did just support konqueror, if khtml can do that.
+
+  .navbar-wrapper
+    top 400px
+
+  .civbox span
+    top 75px
+    background-size auto auto
+
+@media (max-width: 767px)
+  body
+    overflow-x hidden
+  .navbar-wrapper .container
+    padding-left 0
+    padding-right 0
+  .navbar
+    margin-bottom 0
+  .carousel
+    margin-top 0
+    margin-bottom 10px
+  .nav > li
+    padding-left 10px
