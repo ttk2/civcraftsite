@@ -1,8 +1,8 @@
 doctype 5
 html(lang='en')
     head
-        - var pathToAssets = '../assets'
-        - var pathToSelectedTemplateWithinBootstrap = '../assets/dist/css'
+        - var pathToAssets = './assets'
+        - var pathToSelectedTemplateWithinBootstrap = './assets/dist/css'
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width, initial-scale=1.0')
         meta(name='description', content='')
@@ -20,7 +20,7 @@ html(lang='en')
 
         // Custom styles for this template
         link(href='#{pathToSelectedTemplateWithinBootstrap}/carousel.css', rel='stylesheet')
-        link(href='../assets/css/styling.css', rel='stylesheet')
+        link(href='./assets/css/styling.css', rel='stylesheet')
 
         // Custom Carousel Interval
         script.
@@ -91,7 +91,7 @@ html(lang='en')
         //
             Carousel
         #myCarousel.carousel.slide
-            img.layer.display.civlogo(src='../assets/img/logo.png')
+            img.layer.display.civlogo(src='./assets/img/logo.png')
             // Indicators
             // ol.carousel-indicators
                 li.active(data-target='#myCarousel', data-slide-to='0')
@@ -99,11 +99,11 @@ html(lang='en')
                 li(data-target='#myCarousel', data-slide-to='2')
             .carousel-inner
                 .item.active
-                    img(src='../assets/img/render_1.jpg', alt='First slide')
+                    img(src='./assets/img/render_1.jpg', alt='First slide')
                 .item
-                    img(src='../assets/img/render_2.jpg', alt='Second slide')
+                    img(src='./assets/img/render_2.jpg', alt='Second slide')
                 .item
-                    img(src='../assets/img/render_3.jpg', alt='Third slide')
+                    img(src='./assets/img/render_3.jpg', alt='Third slide')
             a.left.carousel-control(href='#myCarousel', data-slide='prev')
                 span.glyphicon.glyphicon-chevron-left
             a.right.carousel-control(href='#myCarousel', data-slide='next')
@@ -123,7 +123,7 @@ html(lang='en')
         script(src='#{pathToAssets}/assets/js/jquery.js')
         script(src='#{pathToAssets}/dist/js/bootstrap.min.js')
         script(src='#{pathToAssets}/assets/js/holder.js')
-        script(src='../assets/js/jquery.fitvids.js')
+        script(src='./assets/js/jquery.fitvids.js')
         script.
           $(document).ready(function() {
             $('#video').fitVids();
