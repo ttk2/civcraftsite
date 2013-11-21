@@ -83,9 +83,9 @@ html(lang='en')
                               // show all pages in nav, mark the right one as active
                               | {% for node in site.pages%}
                               |   {% if page.url == node.url %}
-                              |     <li class="active"><a href="{{node.url}}" class="active">{{node.title}}</a></li>
+                              |     <li class="active"><a href="/civcraftsite{{node.url}}" class="active">{{node.title}}</a></li>
                               |   {% else %}
-                              |     <li><a href="{{node.url}}">{{node.title}}</a></li>
+                              |     <li><a href="/civcraftsite{{node.url}}">{{node.title}}</a></li>
                               |   {% endif%}
                               | {% endfor %}
         //
