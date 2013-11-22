@@ -12,6 +12,7 @@ html(lang='en')
 
         // Bootstrap core CSS
         link(href='#{pathToAssets}/dist/css/bootstrap.css', rel='stylesheet')
+        link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', rel='stylesheet')
 
         // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
         //if lt IE 9
@@ -68,49 +69,47 @@ html(lang='en')
     //
         NAVBAR
     body
-        .navbar-wrapper
-            .container
-                .navbar.navbar-inverse.navbar-static-top
-                    .container
-                        .navbar-header
-                            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-                                span.icon-bar
-                                span.icon-bar
-                                span.icon-bar
-                            // a.navbar-brand(href='#') Project name
-                        .navbar-collapse.collapse
-                            ul.nav.navbar-nav
-                              // show all pages in nav, mark the right one as active
-                              | {% for node in site.pages%}
-                              |   {% if page.url == node.url %}
-                              |     <li class="active"><a href="/civcraftsite{{node.url}}" class="active">{{node.title}}</a></li>
-                              |   {% else %}
-                              |     <li><a href="/civcraftsite{{node.url}}">{{node.title}}</a></li>
-                              |   {% endif%}
-                              | {% endfor %}
-        //
-            Carousel
-        #myCarousel.carousel.slide
-            img.layer.display.civlogo(src='./assets/img/logo.png')
-            // Indicators
-            // ol.carousel-indicators
-                li.active(data-target='#myCarousel', data-slide-to='0')
-                li(data-target='#myCarousel', data-slide-to='1')
-                li(data-target='#myCarousel', data-slide-to='2')
-            .carousel-inner
-                .item.active
-                    img(src='./assets/img/render_1.jpg', alt='First slide')
-                .item
-                    img(src='./assets/img/render_2.jpg', alt='Second slide')
-                .item
-                    img(src='./assets/img/render_3.jpg', alt='Third slide')
-            a.left.carousel-control(href='#myCarousel', data-slide='prev')
-                span.glyphicon.glyphicon-chevron-left
-            a.right.carousel-control(href='#myCarousel', data-slide='next')
-                span.glyphicon.glyphicon-chevron-right
-            // /.carousel
-        //
-            Marketing messaging and featurettes
+        .header
+            .navbar-wrapper
+                .container
+                    .navbar.navbar-inverse.navbar-static-top
+                        .container
+                            .navbar-header
+                                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                                    span.icon-bar
+                                    span.icon-bar
+                                    span.icon-bar
+                                // a.navbar-brand(href='#') Project name
+                            .navbar-collapse.collapse
+                                ul.nav.navbar-nav
+                                  // show all pages in nav, mark the right one as active
+                                  | {% for node in site.pages%}
+                                  |   {% if page.url == node.url %}
+                                  |     <li class="active"><a href="/civcraftsite{{node.url}}" class="active">{{node.title}}</a></li>
+                                  |   {% else %}
+                                  |     <li><a href="/civcraftsite{{node.url}}">{{node.title}}</a></li>
+                                  |   {% endif%}
+                                  | {% endfor %}
+            //
+                Carousel
+            #myCarousel.carousel.slide
+                img.layer.display.civlogo(src='./assets/img/logo.png')
+                // Indicators
+                // ol.carousel-indicators
+                    li.active(data-target='#myCarousel', data-slide-to='0')
+                    li(data-target='#myCarousel', data-slide-to='1')
+                    li(data-target='#myCarousel', data-slide-to='2')
+                .carousel-inner
+                    .item.active
+                        img(src='./assets/img/render_1.jpg', alt='First slide')
+                    .item
+                        img(src='./assets/img/render_2.jpg', alt='Second slide')
+                    .item
+                        img(src='./assets/img/render_3.jpg', alt='Third slide')
+                a.left.carousel-control(href='#myCarousel', data-slide='prev')
+                    span.glyphicon.glyphicon-chevron-left
+                a.right.carousel-control(href='#myCarousel', data-slide='next')
+                    span.glyphicon.glyphicon-chevron-right
 
         // Wrap the rest of the page in another container to center all the content.
         .container
