@@ -8,7 +8,7 @@ html(lang='en')
         meta(name='description', content='')
         meta(name='author', content='')
         link(rel='shortcut icon', href='#{pathToAssets}/assets/ico/favicon.png')
-        title Carousel Template for Bootstrap
+        title {{node.title}}
 
         // Bootstrap core CSS
         link(href='#{pathToAssets}/dist/css/bootstrap.css', rel='stylesheet')
@@ -90,10 +90,12 @@ html(lang='en')
                                   |     <li><a href="/civcraftsite{{node.url}}">{{node.title}}</a></li>
                                   |   {% endif%}
                                   | {% endfor %}
+                                  li: a(href='http://reddit.com/r/Civcraft/') Subreddit
             //
                 Carousel
             #myCarousel.carousel.slide
-                img.layer.display.civlogo(src='./assets/img/logo.png')
+                .container.logocontainer
+                  img.layer.display.civlogo(src='./assets/img/logo.png')
                 // Indicators
                 // ol.carousel-indicators
                     li.active(data-target='#myCarousel', data-slide-to='0')

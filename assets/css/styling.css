@@ -1,11 +1,11 @@
 @font-face {
-  font-family: Neutra;
-  src: url("../fonts/NeutraText-BookAlt.ttf");
+  font-family: Fira;
+  src: url("../fonts/FiraMonoOT-Regular.otf");
   font-weight: normal;
   font-style: normal;
 }
 .navbar-wrapper {
-  font-family: Neutra;
+  font-family: Fira;
   position: relative;
   z-index: 15;
 }
@@ -19,6 +19,10 @@
   z-index: 5;
   background: url("../img/logo.png") no-repeat center top;
   background-size: auto 100px;
+}
+img.pluginImg {
+  width: 94px;
+  height: 94px;
 }
 .carousel {
   margin-bottom: 60px;
@@ -69,10 +73,8 @@
 .carousel .civlogo {
   z-index: 1;
   top: 20%;
-  left: 50%;
   height: auto;
   width: 200px;
-  margin-left: -100px;
 }
 @media (min-width: 768px) {
   .carousel .item {
@@ -81,11 +83,17 @@
   .carousel .layer {
     position: absolute;
   }
+  .container.logocontainer {
+    height: 0;
+  }
+  img.civlogo {
+    z-index: 1000;
+    position: relative;
+    top: 7em;
+    z-index: 1000;
+  }
   .carousel .civlogo {
     z-index: 1000;
-    left: 50%;
-    margin-left: -175px;
-    height: 150px;
     width: auto;
   }
   .civbox span {
@@ -108,7 +116,7 @@
   }
   .navbar-nav li {
     border-left: 1px solid #fff;
-    text-transform: uppercase;
+    text-transform: lowercase;
     font-size: 18px;
   }
   .navbar-nav li:first-child {
