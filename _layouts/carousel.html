@@ -33,13 +33,26 @@ $('.carousel').carousel({interval: 8000});
 
 $(document).ready( function() {
    $(window).resize( onResize );
-}</script></head><!--<NAVBAR></NAVBAR>--><body><div class="header"><div class="navbar-wrapper"><div class="container"><div class="navbar navbar-inverse navbar-static-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><!-- a.navbar-brand(href='#') Project name--></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav"><!-- show all pages in nav, mark the right one as active-->{% for node in site.pages%}
+}</script></head><!--<NAVBAR></NAVBAR>--><body><header><div class="container header-container"><div class="navbar-wrapper"><div class="navbar navbar-inverse navbar-static-top"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><!-- a.navbar-brand(href='#') Project name--></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav">{% for node in site.pages%}
   {% if page.url == node.url %}
     <li class="active"><a href="/civcraftsite{{node.url}}" class="active">{{node.title}}</a></li>
   {% else %}
     <li><a href="/civcraftsite{{node.url}}">{{node.title}}</a></li>
   {% endif%}
-{% endfor %}<li><a href="http://reddit.com/r/Civcraft/">Subreddit</a></li></ul></div></div></div></div></div><!--<Carousel></Carousel>--><div id="myCarousel" class="carousel slide"><div class="container logocontainer"><img src="./assets/img/logo.png" class="layer display civlogo"></div><!-- Indicators--><!-- ol.carousel-indicators<li data-target="#myCarousel" data-slide-to="0" class="active"></li><li data-target="#myCarousel" data-slide-to="1"></li><li data-target="#myCarousel" data-slide-to="2"></li>--><div class="carousel-inner"><div class="item active"><img src="./assets/img/render_1.jpg" alt="First slide"></div><div class="item"><img src="./assets/img/render_2.jpg" alt="Second slide"></div><div class="item"><img src="./assets/img/render_3.jpg" alt="Third slide"></div></div><a href="#myCarousel" data-slide="prev" class="left carousel-control"><span class="glyphicon glyphicon-chevron-left"></span></a><a href="#myCarousel" data-slide="next" class="right carousel-control"><span class="glyphicon glyphicon-chevron-right"></span></a></div></div><!-- Wrap the rest of the page in another container to center all the content.--><div class="container">{{ content }}</div><!--<Bootstrap>core JavaScript</Bootstrap>--><!-- Placed at the end of the document so the pages load faster--><script src="./assets/assets/js/jquery.js"></script><script src="./assets/dist/js/bootstrap.min.js"></script><script src="./assets/assets/js/holder.js"></script><script src="./assets/js/jquery.fitvids.js"></script><script>$(document).ready(function() {
+{% endfor %}<li><a href="http://reddit.com/r/Civcraft/">Subreddit</a></li><li><a href="http://civcraft.org/">Wiki</a></li></ul></div></div></div><img src="./assets/img/logo.png" class="layer display civlogo"></div></header><!-- Wrap the rest of the page in another container to center all the content.--><div class="container">{{ content }}</div><!--<Bootstrap>core JavaScript</Bootstrap>--><!-- Placed at the end of the document so the pages load faster--><script src="./assets/assets/js/jquery.js"></script><script src="./assets/dist/js/bootstrap.min.js"></script><script src="./assets/assets/js/holder.js"></script><script src="./assets/js/jquery.fitvids.js"></script><script>$(document).ready(function() {
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  render = getRandomInt(1, 6);
+  $('header').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')"); 
+  
+  $('header').hover(function() { 
+    $('header').css("background-image", "url('./assets/img/renders/" + render + ".jpg')"); 
+  }).mouseleave(function(){
+    $('header').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')"); 
+  });
+});
+</script><script>$(document).ready(function() {
   $('#video').fitVids();
 });
 </script></body></html>

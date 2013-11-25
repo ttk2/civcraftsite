@@ -1,110 +1,51 @@
+header
+  max-height 300px
+  margin-bottom 15px
+  transition background-image 0.25s ease-in-out
+  -webkit-transition background-image 0.25s ease-in-out
+  -moz-transition background-image 0.25s ease-in-out
+  -ms-transition background-image 0.25s ease-in-out
+  -o-transition background-image 0.25s ease-in-out
+
 @font-face
   font-family Fira
-  src url(../fonts/FiraMonoOT-Regular.otf)
+  src url(../fonts/FiraSansOT-Regular.otf)
   font-weight normal
+  font-style normal
+
+@font-face
+  font-family Fira
+  src url(../fonts/FiraSansOT-Bold.otf)
+  font-weight bold
   font-style normal
 
 //Customize the navbar
 .navbar-wrapper
   font-family Fira
-  position relative
   z-index 15
 
-.civbox span
-  display block
-  position absolute
-  top 25px
-  left 0
-  bottom 0
-  right 0
-  z-index 5
-  background url(../img/logo.png) no-repeat center top
-  background-size auto 100px
+.civlogo
+  max-width 100%
+  margin-top 55px
+  margin-bottom 35px
+  max-height 210px
 
 img.pluginImg
   width 94px
   height 94px
 
-//customize the carousel
-
-.carousel
-  margin-bottom 60px
-  //negative margin to pull it up ~height of navbar/margins
-  margin-top -90px
-
-.carousel-caption
-  z-index 10
-
-.carousel .item
-  height 200px
-  width 100%
-  background-color #777
-
-.carousel-inner > .item > img
-  position absolute
-  top 0
-  left 0
-  min-width 100%
-  max-width none
-  max-height none
-  height auto
-  //height 200px
-
-.carousel .item
-  transition opacity 1s
-  //did I ever mention that I hate vendor prefixes?
-  -webkit-transition opacity 1s
-  -moz-transition opacity 1s
-  -o-transition opacity 1s
-  -khtml-transition opacity 1s
-  //yes I did just support konqueror, if khtml can do that.
-.carousel .active.left, .carousel .active.right
-  left 0
-  opacity 0
-  z-index 2
-
-.carousel .next, .carousel .prev
-  left 0
-  opacity 1
-  z-index 1
-
-//logo overlay
-
-.carousel
-  min-height 200px
-
-.carousel .layer
-  position absolute
-
-.carousel .civlogo
-  z-index 1
-  top: 20%
-  // left: 50%
-  height auto
-  width 200px
-  // margin-left: -100px
+//Reddit widget
+.score.dislikes, .score.likes
+  display none
+.reddit-voting-arrows
+  display none
 
 @media (min-width: 768px)
-  .carousel .item
-    height: 300px
-  .carousel .layer
-    position absolute
-  
-  .container.logocontainer
-    height 0
 
-  img.civlogo
+  .civlogo
     z-index 1000
-    position relative
     top 7em
-    z-index 1000
-    // display none
 
-  .carousel .civlogo
-    z-index 1000
-    // left 50%
-    // margin-left -175px
-    width auto
 
   .civbox span
     top 50px
@@ -120,93 +61,54 @@ img.pluginImg
     z-index 1000
 
   .navbar-wrapper
+    position static
+    float right
     top 185px
-    margin-top 0
+    margin-top 25px
+
+  .navbar-wrapper, .navbar-wrapper *
+    width: -webkit-min-content
+    width: -moz-min-content
 
   .navbar-nav li
-    border-left 1px solid white
     text-transform lowercase
     font-size 18px
-
-  .navbar-nav li:first-child
-    border-left none
+    float right
 
   .navbar-nav li a
     color white !important
     padding-left 10px
     padding-right 10px
 
+  .navbar-nav li a:hover
+      text-decoration: underline
+
   .navbar-nav .active a
     background-color transparent !important
-
-  .navbar-wrapper .container
-    width max-content
-    width -moz-max-content
-    width intrinsic
-    padding 0
+    font-weight bold
 
   .navbar-collapse
     padding-left 0
     padding-right 0
 
-// @media (min-width: 992px)
-//   .carousel
-//     // min-height 500px
-
-//   .carousel .layer
-//     position absolute
-  
-//   .carousel .item
-//     // height 500px
-//     width 100%
-//     background color #777
-
-//   .carousel-inner > .item > img
-//     position absolute
-//     top 0
-//     left 0
-//     min-width 100%
-//     // height 500px
-
-//   .civlogo
-//     position fixed
-//     z-index 5
-//     margin 0 auto
-//     left 50%
-//     margin-left -300px !important
-//     top 5%
-//     height 261px
-//     width auto
-
-//   .carousel .civlogo
-//     z-index 1000
-//     height auto
-//     width auto
-//     transition opacity ease-in 1s
-//     //did I ever mention that I hate vendor prefixes?
-//     -webkit-transition opacity ease-in 1s
-//     -moz-transition opacity ease-in 1s
-//     -o-transition opacity ease-in 1s
-//     -khtml-transition opacity ease-in 1s
-//     //yes I did just support konqueror, if khtml can do that.
-
-//   .navbar-wrapper
-//     top 360px
-
-//   .civbox span
-//     top 75px
-//     background-size auto auto
-
 @media (max-width: 767px)
   body
     overflow-x hidden
+
+  .header-container
+    padding-left 0
+    padding-right 0
+
   .navbar-wrapper .container
     padding-left 0
     padding-right 0
+
   .navbar
     margin-bottom 0
-  .carousel
-    margin-top 0
-    margin-bottom 10px
-  .nav > li
-    padding-left 10px
+
+  .civlogo
+    padding-left 15px
+    padding-right 15px
+    display block
+    margin-left auto
+    margin-right auto

@@ -69,50 +69,29 @@ html(lang='en')
     //
         NAVBAR
     body
-        .header
-            .navbar-wrapper
-                .container
-                    .navbar.navbar-inverse.navbar-static-top
-                        .container
-                            .navbar-header
-                                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-                                    span.icon-bar
-                                    span.icon-bar
-                                    span.icon-bar
-                                // a.navbar-brand(href='#') Project name
-                            .navbar-collapse.collapse
-                                ul.nav.navbar-nav
-                                  // show all pages in nav, mark the right one as active
-                                  | {% for node in site.pages%}
-                                  |   {% if page.url == node.url %}
-                                  |     <li class="active"><a href="/civcraftsite{{node.url}}" class="active">{{node.title}}</a></li>
-                                  |   {% else %}
-                                  |     <li><a href="/civcraftsite{{node.url}}">{{node.title}}</a></li>
-                                  |   {% endif%}
-                                  | {% endfor %}
-                                  li: a(href='http://reddit.com/r/Civcraft/') Subreddit
-            //
-                Carousel
-            #myCarousel.carousel.slide
-                .container.logocontainer
-                  img.layer.display.civlogo(src='./assets/img/logo.png')
-                // Indicators
-                // ol.carousel-indicators
-                    li.active(data-target='#myCarousel', data-slide-to='0')
-                    li(data-target='#myCarousel', data-slide-to='1')
-                    li(data-target='#myCarousel', data-slide-to='2')
-                .carousel-inner
-                    .item.active
-                        img(src='./assets/img/render_1.jpg', alt='First slide')
-                    .item
-                        img(src='./assets/img/render_2.jpg', alt='Second slide')
-                    .item
-                        img(src='./assets/img/render_3.jpg', alt='Third slide')
-                a.left.carousel-control(href='#myCarousel', data-slide='prev')
-                    span.glyphicon.glyphicon-chevron-left
-                a.right.carousel-control(href='#myCarousel', data-slide='next')
-                    span.glyphicon.glyphicon-chevron-right
-
+        header
+            .container.header-container
+              .navbar-wrapper
+                  .navbar.navbar-inverse.navbar-static-top
+                      .navbar-header
+                          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                              span.icon-bar
+                              span.icon-bar
+                              span.icon-bar
+                          // a.navbar-brand(href='#') Project name
+                      .navbar-collapse.collapse
+                          ul.nav.navbar-nav
+                            //- show all pages in nav, mark the right one as active
+                            | {% for node in site.pages%}
+                            |   {% if page.url == node.url %}
+                            |     <li class="active"><a href="/civcraftsite{{node.url}}" class="active">{{node.title}}</a></li>
+                            |   {% else %}
+                            |     <li><a href="/civcraftsite{{node.url}}">{{node.title}}</a></li>
+                            |   {% endif%}
+                            | {% endfor %}
+                            li: a(href='http://reddit.com/r/Civcraft/') Subreddit
+                            li: a(href='http://civcraft.org/') Wiki
+              img.layer.display.civlogo(src='./assets/img/logo.png')
         // Wrap the rest of the page in another container to center all the content.
         .container
             {{ content }}
@@ -125,6 +104,21 @@ html(lang='en')
         script(src='#{pathToAssets}/dist/js/bootstrap.min.js')
         script(src='#{pathToAssets}/assets/js/holder.js')
         script(src='./assets/js/jquery.fitvids.js')
+        script.
+          $(document).ready(function() {
+            function getRandomInt(min, max) {
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            render = getRandomInt(1, 6);
+            $('header').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')"); 
+
+            $('header').hover(function() { 
+              $('header').css("background-image", "url('./assets/img/renders/" + render + ".jpg')"); 
+            }).mouseleave(function(){
+              $('header').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')"); 
+            });
+          });
+
         script.
           $(document).ready(function() {
             $('#video').fitVids();
