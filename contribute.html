@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content=""><meta name="author" content=""><link rel="shortcut icon" href="./assets/assets/ico/favicon.png"><title></title><!-- Bootstrap core CSS--><link href="./assets/dist/css/bootstrap.css" rel="stylesheet"><link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries--><!--[if lt IE 9]><script src="./assets/assets/js/html5shiv.js"></script><script src="./assets/assets/js/respond.min.js"></script><![endif]--><!-- Custom styles for this template--><link href="./assets/dist/css/carousel.css" rel="stylesheet"><link href="./assets/css/styling.css" rel="stylesheet"><!-- Custom Carousel Interval--><script>$(document).ready(function() {
+$('.carousel').carousel({interval: 8000});
+});</script><!--<Script>for Logo/Carousel Overlay Responsiveness</Script><THANKS>TO LUKE SCHREUR for this beauty: http://www.lukeschreur.com/posts/custom-responsive-bootstrap-carousel</THANKS>--><script>function onResize() {
+   var slide = {
+    width: 708,
+    height: 444
+   }
+   
+   var original = {
+    width: 780,
+    height: 721,
+   }
+   
+   var current = {
+    width: $(".carousel img.display").width(),
+    height: $(".carousel img.display").height()
+   } 
+   
+   var s = 100 / original.width * current.width;
+   
+   $(".carousel-inner .item").each( function() {
+    $(this).width( slide.width / 100 * s );
+    $(this).height( slide.height / 100 * s );
+    
+    $(this).css('margin-top', 37 / 100 * s);
+    $(this).css('margin-left', 38 / 100 * s);
+   } );
+   
+   $(".carousel").css("min-height", current.height);
+    $(".carousel-inner").css("height", current.height);
+   }
+}
+
+$(document).ready( function() {
+   $(window).resize( onResize );
+}</script></head><!--<NAVBAR></NAVBAR>--><body><header><div class="container header-container"><div class="navbar-wrapper"><div class="navbar navbar-inverse navbar-static-top"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><!-- a.navbar-brand(href='#') Project name--></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav">
+  
+    <li><a href="/civcraftsite/index.html">About</a></li>
+  
+
+  
+    <li><a href="/civcraftsite/plugins.html">Plugins</a></li>
+  
+
+  
+    <li class="active"><a href="/civcraftsite/contribute.html" class="active">Contribute</a></li>
+  
+<li><a href="http://reddit.com/r/Civcraft/">Subreddit</a></li><li><a href="http://civcraft.org/">Wiki</a></li></ul></div></div></div><img src="./assets/img/logo.png" class="layer display civlogo"></div></header><!-- Wrap the rest of the page in another container to center all the content.--><div class="container"><p>So, after discovering the many ways in which civcraft is the best <s>Minecraft server</s> MMO in the world, you've decided to give back. Great! ttk2 always needs money for server hosting/development bounties/shipping Titan to Montreal. There are currently two ways you can donate monies: Bitcoin (translation: aNCaP diMeNZ), and PayPal. Actually there's no PayPal button right now because I couldn't get it to work, but that's okay because PayPal makes ugly buttons anyway.</p><form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="8USZA69MUMZ3S">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">| <script src="http://coinwidget.com/widget/coin.js"></script>
+<script>
+CoinWidgetCom.go({
+	wallet_address: "1GBytRxMinBz3KjuJzMRC9JyxVfxfbK95J"
+	, currency: "bitcoin"
+	, counter: "hide"
+	, alignment: "bl"
+	, qrcode: false
+	, auto_show: false
+	, lbl_button: "Donate Bitcoin"
+	, lbl_address: "Bitcoin Address"
+	, lbl_count: "donations"
+	, lbl_amount: "BTC"
+});
+</script></div><!--<Bootstrap>core JavaScript</Bootstrap>--><!-- Placed at the end of the document so the pages load faster--><script src="./assets/assets/js/jquery.js"></script><script src="./assets/dist/js/bootstrap.min.js"></script><script src="./assets/assets/js/holder.js"></script><script src="./assets/js/jquery.fitvids.js"></script><script>$(document).ready(function() {
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  render = getRandomInt(1, 6);
+  $('header').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')"); 
+  
+  $('header').hover(function() { 
+    $('header').css("background-image", "url('./assets/img/renders/" + render + ".jpg')"); 
+  }).mouseleave(function(){
+    $('header').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')"); 
+  });
+});
+</script><script>$(document).ready(function() {
+  $('#video').fitVids();
+});
+</script></body></html>
