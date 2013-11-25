@@ -1,0 +1,126 @@
+doctype 5
+html(lang='en')
+    head
+        - var pathToAssets = './assets'
+        - var pathToSelectedTemplateWithinBootstrap = './assets/dist/css'
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        link(rel='shortcut icon', href='#{pathToAssets}/assets/ico/favicon.png')
+        title {{node.title}}
+
+        // Bootstrap core CSS
+        link(href='#{pathToAssets}/dist/css/bootstrap.css', rel='stylesheet')
+        link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', rel='stylesheet')
+
+        // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+        //if lt IE 9
+              script(src='#{pathToAssets}/assets/js/html5shiv.js')
+              script(src='#{pathToAssets}/assets/js/respond.min.js')
+
+        // Custom styles for this template
+        link(href='#{pathToSelectedTemplateWithinBootstrap}/carousel.css', rel='stylesheet')
+        link(href='./assets/css/styling.css', rel='stylesheet')
+
+        // Custom Carousel Interval
+        script.
+          $(document).ready(function() {
+          $('.carousel').carousel({interval: 8000});
+          });
+        //
+          Script for Logo/Carousel Overlay Responsiveness
+          THANKS TO LUKE SCHREUR for this beauty: http://www.lukeschreur.com/posts/custom-responsive-bootstrap-carousel
+        script.
+          function onResize() {
+             var slide = {
+              width: 708,
+              height: 444
+             }
+           
+             var original = {
+              width: 780,
+              height: 721,
+             }
+           
+             var current = {
+              width: $(".carousel img.display").width(),
+              height: $(".carousel img.display").height()
+             } 
+           
+             var s = 100 / original.width * current.width;
+           
+             $(".carousel-inner .item").each( function() {
+              $(this).width( slide.width / 100 * s );
+              $(this).height( slide.height / 100 * s );
+           
+              $(this).css('margin-top', 37 / 100 * s);
+              $(this).css('margin-left', 38 / 100 * s);
+             } );
+           
+             $(".carousel").css("min-height", current.height);
+              $(".carousel-inner").css("height", current.height);
+             }
+          }
+           
+          $(document).ready( function() {
+             $(window).resize( onResize );
+          }
+    //
+        NAVBAR
+    body
+        header
+            .container.header-container
+              .navbar-wrapper
+                  .navbar.navbar-inverse.navbar-static-top
+                      .navbar-header
+                          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                              span.icon-bar
+                              span.icon-bar
+                              span.icon-bar
+                          // a.navbar-brand(href='#') Project name
+                      .navbar-collapse.collapse
+                          ul.nav.navbar-nav
+                            //- show all pages in nav, mark the right one as active
+                            | {% for node in site.pages%}
+                            |   {% if page.url == node.url %}
+                            |     <li class="active"><a href="/civcraftsite{{node.url}}" class="active">{{node.title}}</a></li>
+                            |   {% else %}
+                            |     <li><a href="/civcraftsite{{node.url}}">{{node.title}}</a></li>
+                            |   {% endif%}
+                            | {% endfor %}
+                            li: a(href='http://reddit.com/r/Civcraft/') Subreddit
+                            li: a(href='http://civcraft.org/') Wiki
+              img.layer.display.civlogo(src='./assets/img/logo.png')
+        // Wrap the rest of the page in another container to center all the content.
+        .container
+            {{ content }}
+        //
+            Bootstrap core JavaScript
+
+
+        // Placed at the end of the document so the pages load faster
+        script(src='#{pathToAssets}/assets/js/jquery.js')
+        script(src='#{pathToAssets}/dist/js/bootstrap.min.js')
+        script(src='#{pathToAssets}/assets/js/holder.js')
+        script(src='./assets/js/jquery.fitvids.js')
+        script.
+          $(document).ready(function() {
+            function getRandomInt(min, max) {
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            render = getRandomInt(1, 6);
+            $('header').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')"); 
+
+            $('header').hover(function() { 
+              $('header').css("background-image", "url('./assets/img/renders/" + render + ".jpg')"); 
+            }).mouseleave(function(){
+              $('header').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')"); 
+            });
+          });
+
+        script.
+          $(document).ready(function() {
+            $('#video').fitVids();
+          });
+
