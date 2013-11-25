@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content=""><meta name="author" content=""><link rel="shortcut icon" href="./assets/assets/ico/favicon.png"><title></title><!-- Bootstrap core CSS--><link href="./assets/dist/css/bootstrap.css" rel="stylesheet"><link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries--><!--[if lt IE 9]><script src="./assets/assets/js/html5shiv.js"></script><script src="./assets/assets/js/respond.min.js"></script><![endif]--><!-- Custom styles for this template--><link href="./assets/dist/css/carousel.css" rel="stylesheet"><link href="./assets/css/styling.css" rel="stylesheet"><!-- Custom Carousel Interval--><script>$(document).ready(function() {
+$('.carousel').carousel({interval: 8000});
+});</script><!--<Script>for Logo/Carousel Overlay Responsiveness</Script><THANKS>TO LUKE SCHREUR for this beauty: http://www.lukeschreur.com/posts/custom-responsive-bootstrap-carousel</THANKS>--><script>function onResize() {
+   var slide = {
+    width: 708,
+    height: 444
+   }
+   
+   var original = {
+    width: 780,
+    height: 721,
+   }
+   
+   var current = {
+    width: $(".carousel img.display").width(),
+    height: $(".carousel img.display").height()
+   } 
+   
+   var s = 100 / original.width * current.width;
+   
+   $(".carousel-inner .item").each( function() {
+    $(this).width( slide.width / 100 * s );
+    $(this).height( slide.height / 100 * s );
+    
+    $(this).css('margin-top', 37 / 100 * s);
+    $(this).css('margin-left', 38 / 100 * s);
+   } );
+   
+   $(".carousel").css("min-height", current.height);
+    $(".carousel-inner").css("height", current.height);
+   }
+}
+
+$(document).ready( function() {
+   $(window).resize( onResize );
+}</script></head><!--<NAVBAR></NAVBAR>--><body><header><div class="container header-container"><div class="navbar-wrapper"><div class="navbar navbar-inverse navbar-static-top"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><!-- a.navbar-brand(href='#') Project name--></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav">
+  
+    <li class="active"><a href="/civcraftsite/index.html" class="active">About</a></li>
+  
+
+  
+    <li><a href="/civcraftsite/plugins.html">Plugins</a></li>
+  
+
+  
+    <li><a href="/civcraftsite/contribute.html">Contribute</a></li>
+  
+<li><a href="http://reddit.com/r/Civcraft/">Subreddit</a></li><li><a href="http://civcraft.org/">Wiki</a></li></ul></div></div></div><img src="./assets/img/logo.png" class="layer display civlogo"></div></header><!-- Wrap the rest of the page in another container to center all the content.--><div class="container"><div class="row"><div class="col-md-4"><p>Civcraft is an experiment for communities, political ideologies, debate and discussion. Our backstory is based on history, not fiction. We’re forming a new direction for game-play, not just about surviving the elements, but about surviving each other, where players can work together to create and shape civilization or to watch it crumble. A world open to any idea, manifesto or philosophy, created by the players. We hope to push minecraft to it’s fullest potential in order to foster discussion, experimentation and community building. This is the great pastime and challenge of mankind: Civilization.</p></div><div class="col-md-4"><script src="http://www.reddit.com/r/Civcraft/hot/.embed?limit=5&t=all&style=off" type="text/javascript"></script></div><div class="col-md-4"><p>Bacon ipsum dolor sit amet shank brisket meatloaf sausage tenderloin biltong. Short loin boudin turducken tail tenderloin spare ribs ball tip rump fatback. Salami beef ribs kevin sausage, tenderloin boudin meatball cow pastrami ball tip tail hamburger ham hock. Filet mignon prosciutto pig capicola andouille venison flank. Short ribs swine doner drumstick sirloin, meatball ball tip hamburger beef cow bresaola salami. Chuck strip steak prosciutto bacon doner bresaola.</p></div></div><div class="row"><div id="video" class="col-md-12"><iframe src="//www.youtube.com/embed/GxS8cUbWYg4" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div></div><script>$(document).ready(function() {
+  $('#video').fitVids();
+});</script></div><!--<Bootstrap>core JavaScript</Bootstrap>--><!-- Placed at the end of the document so the pages load faster--><script src="./assets/assets/js/jquery.js"></script><script src="./assets/dist/js/bootstrap.min.js"></script><script src="./assets/assets/js/holder.js"></script><script src="./assets/js/jquery.fitvids.js"></script><script>$(document).ready(function() {
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  render = getRandomInt(1, 6);
+  $('header').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')"); 
+  
+  $('header').hover(function() { 
+    $('header').css("background-image", "url('./assets/img/renders/" + render + ".jpg')"); 
+  }).mouseleave(function(){
+    $('header').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')"); 
+  });
+});
+</script><script>$(document).ready(function() {
+  $('#video').fitVids();
+});
+</script></body></html>
