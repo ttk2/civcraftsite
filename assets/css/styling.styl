@@ -1,11 +1,27 @@
-header
+header, #header-background, #header-background-blur
   max-height 300px
-  margin-bottom 15px
-  transition background-image 0.25s ease-in-out
-  -webkit-transition background-image 0.25s ease-in-out
-  -moz-transition background-image 0.25s ease-in-out
-  -ms-transition background-image 0.25s ease-in-out
-  -o-transition background-image 0.25s ease-in-out
+  transition opacity 0.25s ease-in-out
+  -webkit-transition opacity 0.25s ease-in-out
+  -moz-transition opacity 0.25s ease-in-out
+  -ms-transition opacity 0.25s ease-in-out
+  -o-transition opacity 0.25s ease-in-out
+
+#header-background, #header-background-blur
+  position absolute
+  width 100%
+  height 100%
+
+#header-background
+  z-index -2
+
+#header-background-blur
+  z-index -1
+
+#header-background-blur:hover
+  opacity: 0
+
+.navbar-static-top, .civlogo
+  z-index 15
 
 .nav li .popover
   font-size 14px
@@ -22,10 +38,12 @@ header
   font-weight bold
   font-style normal
 
+body > .container
+  padding-top 2em
+
 //Customize the navbar
 .navbar-wrapper
   font-family Fira
-  z-index 15
 
 .civlogo
   max-width 100%
@@ -34,19 +52,24 @@ header
   max-height 210px
 
 img.pluginImg
-  width 94px
-  height 94px
+  width 56px
+  height 56px
+  float left
+  margin-right 5px
 
 //Reddit widget
 .score.dislikes, .score.likes
   display none
+
 .reddit-voting-arrows
+  display none
+
+.reddit-title
   display none
 
 @media (min-width: 768px)
 
   .civlogo
-    z-index 1000
     top 7em
     margin-top 55px
     margin-bottom 35px
@@ -63,7 +86,6 @@ img.pluginImg
   .navbar
     margin 0
     border none
-    z-index 1000
 
   .navbar-wrapper
     position static

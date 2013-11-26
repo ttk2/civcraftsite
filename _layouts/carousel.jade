@@ -26,6 +26,8 @@ html(lang='en')
         NAVBAR
     body
         header
+            #header-background
+            #header-background-blur
             .container.header-container
               .navbar-wrapper
                   .navbar.navbar-inverse.navbar-static-top
@@ -66,14 +68,16 @@ html(lang='en')
             function getRandomInt(min, max) {
               return Math.floor(Math.random() * (max - min + 1)) + min;
             }
-            render = getRandomInt(1, 7);
-            $('header').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')"); 
+            render = getRandomInt(1, 8);
+            $('#header-background').css("background-image", "url('./assets/img/renders/" + render + ".jpg')"); 
+            $('#header-background-blur').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')"); 
 
             $('header').hover(function() { 
-              $('header').css("background-image", "url('./assets/img/renders/" + render + ".jpg')"); 
+              $('#header-background-blur').css("opacity", "0"); 
             }).mouseleave(function(){
-              $('header').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')"); 
+              $('#header-background-blur').css("opacity", "1"); 
             });
+            $('.reddit-header').append("<h4 class='reddit-title-custom'>Posts from <a href='http://reddit.com/r/Civcraft'>/r/Civcraft</a></h4>");
           });
 
         script.
