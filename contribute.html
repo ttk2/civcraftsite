@@ -35,12 +35,11 @@ CoinWidgetCom.go({
   
   $('header').hover(function() { 
     $('#header-background-blur').css("opacity", "0"); 
+    $('.navbar-wrapper').css("background-color", "rgba(0,0,0,0.5)"); 
   }).mouseleave(function(){
     $('#header-background-blur').css("opacity", "1"); 
+    $('.navbar-wrapper').css("background-color", "rgba(0,0,0,0)"); 
   });
-  $('.navbar-wrapper a').hover(function() { 
-    $('#header-background-blur').css("opacity", "1"); 
-  })
   $('.reddit-header').append("<h4 class='reddit-title-custom'>Posts from <a href='http://reddit.com/r/Civcraft'>/r/Civcraft</a></h4>");
 });
 </script><script>$(document).ready(function() {
