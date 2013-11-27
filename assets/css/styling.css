@@ -98,6 +98,13 @@ img.pluginImg {
     float: right;
     top: 185px;
     margin-top: 25px;
+    border-radius: 6px;
+    transition: background-color 0.25s ease-in-out;
+    -webkit-transition: background-color 0.25s ease-in-out;
+    -khtml-background-color: 0.25s ease-in-out;
+    -moz-transition: background-color 0.25s ease-in-out;
+    -ms-transition: background-color 0.25s ease-in-out;
+    -o-transition: background-color 0.25s ease-in-out;
   }
   .navbar-wrapper,
   .navbar-wrapper * {
