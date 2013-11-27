@@ -13,6 +13,7 @@ header,
   position: absolute;
   width: 100%;
   height: 100%;
+  background-position: center center;
 }
 #header-background {
   z-index: -2;
@@ -69,6 +70,9 @@ img.pluginImg {
 }
 .reddit-title {
   display: none;
+}
+.plugin-description {
+  font-weight: bold;
 }
 @media (min-width: 768px) {
   .civlogo {
