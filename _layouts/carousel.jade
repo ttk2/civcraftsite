@@ -13,6 +13,11 @@ html(lang='en')
         // Bootstrap core CSS
         link(href='#{pathToAssets}/dist/css/bootstrap.css', rel='stylesheet')
         link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', rel='stylesheet')
+        // scripts
+        script(src='#{pathToAssets}/assets/js/jquery.js')
+        script(src='#{pathToAssets}/dist/js/bootstrap.min.js')
+        script(src='#{pathToAssets}/assets/js/holder.js')
+        script(src='./assets/js/jquery.fitvids.js')
 
         // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
         //if lt IE 9
@@ -59,10 +64,6 @@ html(lang='en')
 
 
         // Placed at the end of the document so the pages load faster
-        script(src='#{pathToAssets}/assets/js/jquery.js')
-        script(src='#{pathToAssets}/dist/js/bootstrap.min.js')
-        script(src='#{pathToAssets}/assets/js/holder.js')
-        script(src='./assets/js/jquery.fitvids.js')
         script.
           $(document).ready(function() {
             function getRandomInt(min, max) {

@@ -33,9 +33,20 @@ title: About
         href='http://mumble.sourceforge.net/'>download it</a> and connect with the ip 'mc.civcraft.vg'. We have a wiki at <a href='http://civcraft.org/'>civcraft.org</a>, with information on players and cities. So, come join! Stay awhile, stay forever.
   .col-md-6#video
     iframe(src='//www.youtube.com/embed/GxS8cUbWYg4' frameborder=0 allowfullscreen)
-  .col-md-6
+  .col-md-3
     | <script src="http://www.reddit.com/r/Civcraft/hot/.embed?limit=20&t=all&style=off" type="text/javascript"></script>
+  .col-md-3
+    h4 Online Players
+    ul#playerlist.list-group
 script.
   $(document).ready(function() {
     $('#video').fitVids();
+    $('.rembeddit-content > div').addClass('list-group');
+    $('.reddit-link').addClass('list-group-item');
+    $.getJSON('http://216.249.101.26:3000/players', function(data) {
+      for (var i = 0; i < data.length; i++) {
+        console.log(data[i].username);
+        $('#playerlist').append('<li class="list-group-item">' + data[i].username + '</li>');
+      }
+    });
   });
