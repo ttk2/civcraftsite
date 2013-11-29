@@ -4,7 +4,7 @@
   {% else %}
     <li><a href=".{{node.url}}">{{node.title}}</a></li>
   {% endif%}
-{% endfor %}<li><a href="http://reddit.com/r/Civcraft/">Subreddit</a></li><li><a data-html="true" data-placement="auto right" data-title="Server IP" data-content="minecraft server ip: mc.civcraft.vg&lt;br&gt;mumble server ip: mc.civcraft.vg" class="server-ip">Server&nbsp;IP</a></li><li><a href="http://civcraft.org/">Wiki</a></li></ul></div></div></div><img src="./assets/img/logo.png" class="layer display civlogo"></div></header><!-- Wrap the rest of the page in another container to center all the content.--><div class="container">{{ content }}</div><!--<Bootstrap>core JavaScript</Bootstrap>--><!-- Placed at the end of the document so the pages load faster--><script>$(document).ready(function() {
+{% endfor %}<li><a href="http://reddit.com/r/Civcraft/">Subreddit</a></li><li><a style="width: -moz-max-content; width: -webkit-max-content; width: intrinsic">ip: mc.civcraft.vg</a></li><li><a href="http://civcraft.org/">Wiki</a></li></ul></div></div></div><img src="./assets/img/logo.png" class="layer display civlogo"></div></header><!-- Wrap the rest of the page in another container to center all the content.--><div class="container">{{ content }}</div><!--<Bootstrap>core JavaScript</Bootstrap>--><!-- Placed at the end of the document so the pages load faster--><script>$(document).ready(function() {
   function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
