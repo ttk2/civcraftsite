@@ -74,13 +74,22 @@ Before logging on, there are a few things you should probably know and do. The s
     <iframe src="//www.youtube.com/embed/GxS8cUbWYg4" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
   </div>
   <br>
-  <div class="col-md-6"><script src="http://www.reddit.com/r/Civcraft/hot/.embed?limit=15&t=all&style=off" type="text/javascript"></script></div>
+  <div class="col-md-3"><script src="http://www.reddit.com/r/Civcraft/hot/.embed?limit=15&t=all&style=off" type="text/javascript"></script></div>
+  <div class="col-md-3">
+    <h4>Online Players</h4>
+    <ul id="playerlist" class=".list-group">
+  </div>
 </div>
 <script>
   $(document).ready(function() {
     $('#video').fitVids();
     $('.rembeddit-content > div').addClass('list-group');
     $('.reddit-link').addClass('list-group-item');
+    $.getJSON('http://216.249.101.26:3000/players', function(data) {
+      for (var i = 0; i < data.length; i++) {
+        $('#playerlist').append('<li class="list-group-item">' + data[i].username + '</li>');
+      }
+    });
   });
 </script>
 
