@@ -6,7 +6,7 @@
     <meta name="description" content=""><meta name="author" content="">
     <link rel="shortcut icon" href="./assets/ico/favicon.png">
     <title>{{page.title}}</title>
-    
+
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
     <link href="./assets/css/font-awesome.css" rel="stylesheet">
     <link href="./assets/css/styling.css" rel="stylesheet">
@@ -46,7 +46,7 @@
             </div>
           </div>
         </div>
-        <a style="text-decoration:none" href="index.html"><img src="./assets/img/logo.png" class="layer display civlogo"></a>
+        <a style="text-decoration:none" href="index.html"><img src="./assets/img/logo-new.png" class="layer display civlogo"></a>
       </div>
     </header>
     <div class="container">
@@ -58,15 +58,15 @@
           return Math.floor(Math.random() * (max - min + 1)) + min;
         }
         render = getRandomInt(1, 8);
-        $('#header-background').css("background-image", "url('./assets/img/renders/" + render + ".jpg')"); 
-        $('#header-background-blur').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')"); 
-  
-        $('header').hover(function() { 
-          $('#header-background-blur').css("opacity", "0"); 
-          $('.navbar-wrapper').css("background-color", "rgba(0,0,0,0.5)"); 
+        $('#header-background').css("background-image", "url('./assets/img/renders/" + render + ".jpg')");
+        $('#header-background-blur').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')");
+
+        $('header').hover(function() {
+          $('#header-background-blur').css("opacity", "0");
+          $('.navbar-wrapper').css("background-color", "rgba(0,0,0,0.5)");
         }).mouseleave(function(){
-          $('#header-background-blur').css("opacity", "1"); 
-          $('.navbar-wrapper').css("background-color", "rgba(0,0,0,0)"); 
+          $('#header-background-blur').css("opacity", "1");
+          $('.navbar-wrapper').css("background-color", "rgba(0,0,0,0)");
         });
         $('.reddit-header').append("<h4 class='reddit-title-custom'>Posts from <a href='http://reddit.com/r/Civcraft'>/r/Civcraft</a></h4>");
       });
