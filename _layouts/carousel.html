@@ -57,6 +57,11 @@
         }
         render = getRandomInt(1, 8);
         $('#header-background-blur').css("background-image", "url('./assets/img/blurredrenders/" + render + ".jpg')");
+        $('header').hover(function() {
+          $('.navbar-wrapper').css("background-color", "rgba(0,0,0,0.5)");
+        }).mouseleave(function(){
+          $('.navbar-wrapper').css("background-color", "rgba(0,0,0,0)");
+        });
         $('.reddit-header').append("<h4 class='reddit-title-custom'>Posts from <a href='http://reddit.com/r/Civcraft'>/r/Civcraft</a></h4>");
       });
     </script>
